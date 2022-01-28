@@ -1,10 +1,18 @@
+library(shiny)
+library(leaflet)
+library(ggplot2)
+library(scales)
+library(dplyr, warn.conflicts = FALSE)
+library(ggthemes)
+
 data <- read.csv("./Data/processed_df.csv")
 #to remove scientific notation for numbers
 options(scipen = 999)
 choices <- c("All",data$Area)
 
 ui <- fluidPage(
-  theme = shinytheme("sandstone"),
+  #theme = shinytheme("sandstone"),
+  theme = theme_light(),
   navbarPage("Real Estate Property Analysis",
              tabPanel("Visualization",
                       sidebarLayout(
@@ -34,7 +42,7 @@ ui <- fluidPage(
                         )
                       )),
              
-             tabPanel('Documentation', includeMarkdown("./intro.md")),
+             tabPanel('Documentation', includeMarkdown("./Data/Intro.md")),
              
   ),
   

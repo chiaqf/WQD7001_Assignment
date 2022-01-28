@@ -3,7 +3,6 @@ library(leaflet)
 library(ggplot2)
 library(scales)
 library(dplyr, warn.conflicts = FALSE)
-library(shinythemes)
 library(ggthemes)
 
 r_colors <- rgb(t(col2rgb(colors()) / 255))
